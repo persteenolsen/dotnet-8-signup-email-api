@@ -21,27 +21,28 @@
 - A traditional Webhotel for hosting
 - VS Code
 
-# Updated EF Core tool to the latest version - Version 8.03
+Updated EF Core tool to the latest version - Version 8.03
 dotnet tool update --global dotnet-ef
 
 # Development
-# Create the Initial Migration for SQLite DB - should work for any DB
+Create the Initial Migration for SQLite DB - should work for any DB
 set ASPNETCORE_ENVIRONMENT=Development
 
 dotnet ef migrations add InitialCreate --context DataContext --output-dir Migrations/SqliteMigrations
 
-# Create the local SQLite DB
+# Creates the SQLite DB
 dotnet run
 
 # Production
-# Create a self contained build for production at the remote server / traditionel web hotel
+Create a self contained build for production at the remote server / traditionel web hotel
 dotnet publish webapi.csproj --configuration Release --runtime win-x86 --self-contained
 
-# Upload the build to remote server ( without SQLite DB )
+Upload the build to remote server ( without SQLite DB )
 
-# At my remote servers the web.config needs to be without the folowing 
+At my remote servers the web.config needs to be without the folowing:
 hostingModel="inprocess"
 
-# Create the remote SQLite DB at the remote server
-https://remote-host.com/swagger
+# Creates the SQLite DB
+Now you can create the remote SQLite DB at the remote server by type the url:
+remote-host.com/swagger
 

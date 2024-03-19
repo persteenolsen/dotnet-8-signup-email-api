@@ -19,9 +19,29 @@
 - SQLite as a local DB
 - Swagger for documentation
 - A traditional Webhotel for hosting
+- VS Code
 
-# Updated EF Core tool to the latest version
+# Updated EF Core tool to the latest version - Version 8.03
 dotnet tool update --global dotnet-ef
 
-# Create the Initial Migration for SQLite DB ( should be ok for any DB )
-dotnet ef migrations add InitialCreate --context DataContext --output-dir Migrations/SqlServerMigrations
+# Development
+# Create the Initial Migration for SQLite DB - should work for any DB
+set ASPNETCORE_ENVIRONMENT=Development
+
+dotnet ef migrations add InitialCreate --context DataContext --output-dir Migrations/SqliteMigrations
+
+# Create the local SQLite DB
+dotnet run
+
+# Production
+# Create a self contained build for production at the remote server / traditionel web hotel
+dotnet publish webapi.csproj --configuration Release --runtime win-x86 --self-contained
+
+# Upload the build to remote server ( without SQLite DB )
+
+# At my remote servers the web.config needs to be without the folowing 
+hostingModel="inprocess"
+
+# Create the remote SQLite DB at the remote server
+https://remote-host.com/swagger
+

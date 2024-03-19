@@ -21,7 +21,8 @@
 - A traditional Webhotel for hosting
 - VS Code
 
-Updated EF Core tool to the latest version - Version 8.03
+# Updated EF Core tool to the latest version
+
 dotnet tool update --global dotnet-ef
 
 # Development
@@ -32,7 +33,7 @@ set ASPNETCORE_ENVIRONMENT=Development
 
 dotnet ef migrations add InitialCreate --context DataContext --output-dir Migrations/SqliteMigrations
 
-# Creates the local SQLite DB
+# Create the local SQLite DB
 
 dotnet run
 
@@ -48,7 +49,8 @@ At my remote servers the web.config needs to be without the folowing:
 
 hostingModel="inprocess"
 
-# Creates the remote SQLite DB
+# Create the remote SQLite DB
+
 Now you can create the remote SQLite DB at the remote server by type the url:
 
 remote-host.com/swagger

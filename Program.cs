@@ -10,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 {
     var services = builder.Services;
     var env = builder.Environment;
- 
+     
+    // DB
     services.AddDbContext<DataContext>();
    
     services.AddCors();

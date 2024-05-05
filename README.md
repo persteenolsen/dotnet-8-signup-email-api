@@ -2,9 +2,17 @@
 
 .NET 8.0.203 - Boilerplate API with Email Sign Up, Verification, Authentication & Forgot Password
 
+# Last updated
+
+- 05-05-2024
+
+The Web API was made without the ASP.NET Core Identity using custom JWT middleware
+
 # Functionality of the Web App
 
 - JWT authentication with refresh tokens
+- Refresh token rotation
+- Revoked token reuse detection
 - Email sign up and verification
 - Forgot password and reset password functionality
 - Role based authorization with two roles "User" and "Admin"

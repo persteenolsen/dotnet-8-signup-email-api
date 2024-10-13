@@ -45,7 +45,7 @@ using (var scope = app.Services.CreateScope())
 {
     // generated swagger json and swagger ui middleware
     app.UseSwagger();
-    app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", ".NET Sign-up and Verification API - 20-08-2024"));
+    app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", ".NET Sign-up and Verification API - 13-10-2024"));
 
     // global cors policy
     app.UseCors(x => x
